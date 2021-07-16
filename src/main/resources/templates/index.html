@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Student App</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+	<h1>Etudients</h1>
+	<br><a th:href="@{/student/add}">Add Student</a><br>
+		
+	<table>
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Nom</th>
+				<th>Note</th>
+
+				<th>Action</th>
+			</tr>
+
+		</thead>
+		<tbody>
+			<tr th:each="s : ${ListStudents}">
+				<td th:text=${s.id}></td>
+				<td th:text="${s.nom}"></td>
+				<td th:text= "${s.note}"></td>
+
+				<td>
+					<a th:href="@{/student/update/{id}(id=${s.id})}">Update</a>
+					<a th:href="@{/student/delete/{id}(id=${s.id})}">Delete</a>
+				</td>
+			</tr>
+
+		</tbody>
+	</table>
+	
+</body>
+</html>

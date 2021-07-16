@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Student App</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<h2>Ajouter Etudient</h2>
+	<br>
+	<form action="#" th:action="@{/student/save}" th:object="${student}" method="POST">
+		<input type="hidden" th:field=*{id}> 
+		<input type="text" th:field=*{nom} placeholder="Nom ....">
+		<input type="number" th:field=*{note} placeholder="note ...">
+		
+		<button type="submit">Ajouter</button>
+	</form>
+</body>
+</html>
